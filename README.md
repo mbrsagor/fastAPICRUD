@@ -15,8 +15,19 @@ cd fastAPICRUD
 virtualenv venv --python=python3.10
 source venv/bin/activate
 pip install -r requirements.txt
-pip install "uvicorn[standard]"
+uvicorn app.main:app --host localhost --port 8000 --reload
 ```
+
+#### Run docker::
+```bash
+docker-compose up -d
+```
+
+###### An ORM for Python::
+```bash
+pip install SQLAlchemy fastapi-utils
+```
+
 
 ```python
 from typing import Union
