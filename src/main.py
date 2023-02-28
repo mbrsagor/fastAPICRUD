@@ -1,6 +1,7 @@
 from src import models, note
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from .database import engine
 
 models.Base.metadata.create_all(bind=engine)
@@ -20,8 +21,3 @@ app.add_middleware(
 )
 
 app.include_router(note.router, tags=['Notes'], prefix='/api/notes')
-
-
-@app.get("/api/healthchecker")
-def root():
-    return {"message": "Welcome to FastAPI with SQLAlchemy"}
