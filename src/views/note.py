@@ -1,5 +1,6 @@
-from . import schemas, models
-from .database import get_db
+from src import models
+from src.db import schemas
+from src.db.database import get_db
 from sqlalchemy.orm import Session
 from fastapi import Depends, HTTPException, status, APIRouter, Response
 

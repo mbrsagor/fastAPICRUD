@@ -1,8 +1,9 @@
-from src import models, note
+from src import models
+from .views import note
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .database import engine
+from src.db.database import engine
 
 models.Base.metadata.create_all(bind=engine)
 
