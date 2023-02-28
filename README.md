@@ -15,7 +15,7 @@ cd fastAPICRUD
 virtualenv venv --python=python3.10
 source venv/bin/activate
 pip install -r requirements.txt
-uvicorn app.main:app --host localhost --port 8000 --reload
+uvicorn src.main:app --host localhost --port 8000 --reload
 ```
 
 #### Run docker::
