@@ -9,12 +9,11 @@ from utils import messages
 router = APIRouter()
 
 
+# Get all note with pagination with filter
 @router.get('/')
 def get_notes(db: Session = Depends(get_db), limit: int = 10, page: int = 1, search: str = ''):
     skip = (page - 1) * limit
-
-    notes = db.query(models.Note).filter(
-        models.Note.title.contains(search)).limit(limit).offset(skip).all()
+    notes = db.query(models.Note).filter(models.Note.title.contains(search)).limit(limit).offset(skip).all()
     resp = {
         'status': True,
         'message': messages.DATA_RENDERED,
