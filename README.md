@@ -48,4 +48,4 @@ def read_item(item_id: int, q: Union[str, None] = None):
 ```
 
 ### Source:
-[Here is the blog which I founded](https://codevoweb.com/build-a-crud-app-with-fastapi-and-sqlalchemy/)
+[Here is the blog, which I got from it.](https://codevoweb.com/build-a-crud-app-with-fastapi-and-sqlalchemy/)
