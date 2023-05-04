@@ -22,6 +22,7 @@ def get_notes(db: Session = Depends(get_db), limit: int = 10, page: int = 1, sea
     return resp
 
 
+# Create note
 @router.post('/', status_code=status.HTTP_201_CREATED)
 def create_note(payload: schemas.NoteBaseSchema, db: Session = Depends(get_db)):
     new_note = models.Note(**payload.dict())
@@ -68,6 +69,7 @@ def get_post(noteId: str, db: Session = Depends(get_db)):
     return resp
 
 
+# Delete API
 @router.delete('/{noteId}')
 def delete_post(noteId: str, db: Session = Depends(get_db)):
     note_query = db.query(models.Note).filter(models.Note.id == noteId)

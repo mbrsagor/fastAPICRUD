@@ -5,6 +5,9 @@ from fastapi_utils.guid_type import GUID, GUID_DEFAULT_SQLITE
 
 
 class Note(Base):
+    """
+    Note models
+    """
     __tablename__ = 'notes'
     id = Column(GUID, primary_key=True, default=GUID_DEFAULT_SQLITE)
     title = Column(String, nullable=False)
